@@ -1,0 +1,108 @@
+<!-- <h1 class="text-3xl mb-5">Control Flow</h1> -->
+<app-title title="ROE" withShadow></app-title>
+
+<section class="grid grid-cols-1 md:grid-cols-1 gap-3">
+
+  <!-- ngIf @if -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">Umbral para ROE</h2>
+
+    <p>
+      En Huawei por encima de 137 está mal. <br>
+
+      En Nokia por encima de 150 está mal. <br>
+
+    </p>
+
+
+  </div>
+
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+
+
+  <!-- @switch-->
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">Para Huawei</h2>
+
+    <p>
+      1) En el gestor ubicar el equipo que queremos probar, luego hacer click derecho sobre el icono y seleccionar MML
+      Command y tambien Device Panel. <br> <br>
+      <img src="./assets/1.png" alt="">
+
+
+
+    </p>
+
+  </div>
+
+
+  <!-- @For-->
+  <div class="bg-white rounded shadow p-10">
+
+   <p>
+    2) En el <strong>Device Panel</strong> buscar la celda que queremos probar para saber el subrack, el numero de celda. <br> <br>
+    <img src="./assets/2.png" alt=""> <br> <br>
+    3) En la pestaña MML Command escribir este comando: <strong>STR VSWRTEST</strong>, seleccionar el cabinet en 0, subrack de la celda que vimos en <strong>Device Panel</strong> y <strong>Slot</strong> en 0. <br> <br>
+    <img src="./assets/3.png" alt="">
+   </p>
+
+
+  </div>
+
+
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-1 gap-3 mt-3">
+
+  <div class="bg-white rounded shadow p-10">
+
+    4) Marcar la casilla de verificacion abajo y hacer click en OK, esperar a que se complete la prueba al 100%. <br> <br>
+    <img src="./assets/4.png" alt="">
+
+  </div>
+
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-1 gap-3 mt-3">
+
+
+  <!-- @switch-->
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">Para Nokia</h2>
+
+    <p>
+      1) Una vez en el gestor hacemos click en el estetoscopio del menu y despues click en el menu <strong>Antena line online monitoring</strong> <br> <br>
+      <img src="./assets/n1.png" alt="">
+
+
+
+    </p>
+
+  </div>
+
+
+
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+
+  <div class="bg-white rounded shadow p-10">
+
+    2) Marcamos las antenas o grupo que deseamos testear. En Nokia la prueba no corta, se sigue ejecutando hasta que la detenemos. Para iniciar hacemos click en el botón <strong>Start</strong> <br> <br>
+    <img src="./assets/n2.png" alt="">
+
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+
+    3) Nos va a ir mostrando los resultados de las pruebas y horas en las que lo muestra en columnas que se desplazan a la derecha. <br> <br>
+    <img src="./assets/n3.png" alt="">
+
+  </div>
+
+</section>
+
+
