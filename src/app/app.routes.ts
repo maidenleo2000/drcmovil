@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
 
@@ -17,6 +18,11 @@ export const routes: Routes = [
       path: 'Degradacion',
       title: 'ROE',
       loadComponent: () => import('./dashboard/pages/roe/roe.component')
+    },
+    {
+      path: 'Cortes de FO',
+      title: 'Comandos Putty',
+      loadComponent: () => import('./dashboard/pages/comandos-putty/comandos-putty.component')
     },
     // {
     //   path: 'defer-options',
@@ -64,3 +70,10 @@ export const routes: Routes = [
 
 
 ];
+
+@NgModule({
+  //EXPLICACION: Aca se agrega el {useHash: true} para que al recargar la pagina en el HOSTING no de error. Al tener una ruta como se maneja aca se le dice al hosting que busque adentro de esa ruta el archivo index.html pero no existe en este caso. Al habilitar el useHash se agrega un # antes de la ruta para que no de error y lo maneja Angular
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

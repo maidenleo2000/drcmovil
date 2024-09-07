@@ -1,0 +1,128 @@
+<!-- <h1 class="text-3xl mb-5">Control Flow</h1> -->
+<app-title title="Comandos para Putty" withShadow></app-title>
+
+<section class="grid grid-cols-1 md:grid-cols-1 gap-3 mb-3">
+
+  <!-- ngIf @if -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">Aclaraciones</h2>
+
+    <p>Transport Radio va a NOC por mas que sea AMBA</p>
+    <p>AGREGATION ---> se analiza</p>
+    <p>ROA ---> Se analiza</p>
+    <p>DWDM ---> A NOC</p>
+    <p>INTERIOR ------> A NOC-TR SIEMPRE</p>
+
+
+    <p>
+      ----------------------------------------- <br>
+      ----------------------------------------- <br>
+      consulta potencia SFP <br>
+      DSP SFP <br><br>
+
+      ----------------------------------------- <br>
+      ----------------------------------------- <br>
+
+      DSP SFP 0 0 7 para ver la señal de la FO desde el SFP de entrada a la placa del sitio <br> <br>
+
+      LA OT PARA MEDIR DESDE HUB ES JOBTYPE PAA11 o PAA12 <br><br>
+
+      placa umtp siempre esta en pisicion 7<br>
+      -----------------------------------------<br>
+      -----------------------------------------<br>
+    </p>
+
+  </div>
+
+</section>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+  <!-- ngIf @if -->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">En ROA (equipos ex Cable)</h2>
+
+    <h3 class="text-1xl font-bold">Ingresar puerto</h3> <br>
+
+    <input
+      class="w-100 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+      placeholder="Puerto..." type="text" #port>
+
+    <button (click)="asignarPuerto(port.value)"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ms-2">Asignar Puerto</button>
+
+
+    <br> <br> <br>
+
+    <p>
+      ssh roa <br>
+      show interfaces ge-{{valorPuerto}} <br>
+      show interfaces diagnostics ge-{{valorPuerto}} <br>
+      show interfaces diagnostics optics ge-{{valorPuerto}} <br>
+      show interfaces diagnostics optics ge-{{valorPuerto}} <br>
+
+    </p>
+
+
+  </div>
+
+  <!-- @switch-->
+  <div class="bg-white rounded shadow p-10">
+
+    <h2 class="text-2xl font-bold mb-5">En equipos ex Teco</h2>
+
+
+
+    <br> <br> <br>
+    <strong>Ejemplo Huawei-CX600-X8 (Los CX600 se ven con TELNEL)</strong> <br>
+    <p>
+
+      telnet PKL3MU <br>
+      display interface gi{{valorPuerto}} <br>
+
+
+    </p>
+
+  </div>
+
+
+  <!-- @For-->
+  <div class="bg-white rounded shadow p-10">
+
+    <!-- <h2 class="text-2xl font-bold mb-5">PARA VER POTENCIA EN EQUIPOS CISCO:</h2> -->
+
+
+
+    <br> <br> <br>
+    <strong>PARA VER POTENCIA EN EQUIPOS CISCO:</strong> <br> <br>
+    <p>
+
+      show interfaces gi{{valorPuerto}} <br>
+      show controllers gi{{valorPuerto}} PHY <br>
+      show controler gigabit eth <br>
+
+    </p>
+
+  </div>
+
+
+  <div class="bg-white rounded shadow p-10">
+
+    <!-- <h2 class="text-2xl font-bold mb-5">PARA VER POTENCIA EN EQUIPOS CISCO:</h2> -->
+
+
+
+    <br> <br> <br>
+    <strong>PARA LOS EQUIPOS DEL TIPO ARBBQUI-RNE001:</strong> <br> <br>
+    <p>
+      ssh ARBBQUI-RNE001 <br> <br>
+      display interface GigabitEthernet {{valorPuerto}} <br>
+
+    </p>
+
+  </div>
+
+
+</section>
